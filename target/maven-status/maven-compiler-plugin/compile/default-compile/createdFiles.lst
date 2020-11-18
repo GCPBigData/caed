@@ -1,0 +1,16 @@
+br/caed/exception/CustomAttributes.class
+br/caed/dto/TecnicoDTO.class
+br/caed/domain/Pessoa.class
+br/caed/controller/TecnicoController.class
+br/caed/exception/GlobalExceptionHandler.class
+br/caed/repository/UserRepository.class
+br/caed/domain/User.class
+br/caed/repository/TecnicoRepository.class
+br/caed/domain/Tecnico$TecnicoBuilder.class
+br/caed/CaedApplication.class
+br/caed/domain/Pessoa$PessoaBuilder.class
+br/caed/domain/Tecnico.class
+br/caed/config/SecurityConfig.class
+br/caed/service/UserDetailsService.class
+br/caed/service/TecnicoService.class
+br/caed/repository/PessoaRepository.class
