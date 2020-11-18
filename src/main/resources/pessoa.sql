@@ -1,4 +1,4 @@
-create table public.pessoa
+create table caed.pessoa
 (
     id              serial       not null
         constraint pessoa_pk
@@ -8,14 +8,14 @@ create table public.pessoa
     data_nascimento date         not null,
     sexo            char         not null,
     email           varchar(100),
-    maior_idade     date,
+    maior_idade     varchar,
     data_criacao    timestamp,
     data_alteracao  timestamp
 );
 
-alter table public.pessoa
+alter table caed.pessoa
     owner to postgres;
 
 create unique index pessoa_id_uindex
-    on public.pessoa (id);
+    on caed.pessoa (id);
 

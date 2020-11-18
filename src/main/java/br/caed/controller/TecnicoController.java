@@ -21,9 +21,7 @@ import reactor.core.publisher.Mono;
 
 import javax.validation.Valid;
 import java.time.Duration;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("tecnicos")
@@ -117,12 +115,12 @@ public class TecnicoController {
     @ResponseStatus(HttpStatus.OK)
     public Flux<ResponseEntity<Tecnico>> getByNome(@PathVariable String nome) {
         return tecnicoRepository.findByNome(nome)
-                .filter(c -> c.getStatus().equals("Ativo"))
+//                .filter(c -> c.getStatus().equals("Ativo"))
                 .map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
-    @RequestMapping(value="/flux20Ativos", method= RequestMethod.GET)
+/*    @RequestMapping(value="/flux20Ativos", method= RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<List<TecnicoDTO>> findAllAtivos() {
         Flux<Tecnico> listFlux = tecnicoService.findAll();
@@ -146,7 +144,7 @@ public class TecnicoController {
                 .limit(20)
                 .collect( Collectors.toList());
         return ResponseEntity.ok().body(listDto);
-    }
+    }*/
 
     @GetMapping(value = "/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<Tecnico> streamTecnicoStatus() {

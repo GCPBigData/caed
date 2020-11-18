@@ -5,6 +5,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.time.LocalDateTime;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,20 +17,27 @@ public class Pessoa {
     @Id
     @Column("ID")
     private Integer id;
+
     @Column("NOME")
     private String nome;
+
     @Column("CPF")
     private String cpf;
+
     @Column("SEXO")
     private String sexo;
+
     @Column("EMAIL")
     private String email;
+
     @Column("MAIOR_IDADE")
     private String maiorIdade;
+
     @Column("DATA_CRIACAO")
-    private String dataCriacao;
+    private LocalDateTime dataCriacao;
+
     @Column("DATA_ALTERACAO")
-    private String dataAlteracao;
+    private LocalDateTime dataAlteracao;
 
     public Integer getId() {
         return id;
@@ -78,19 +87,19 @@ public class Pessoa {
         this.maiorIdade = maiorIdade;
     }
 
-    public String getDataCriacao() {
+    public LocalDateTime getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(String dataCriacao) {
+    public void setDataCriacao(LocalDateTime dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
-    public String getDataAlteracao() {
+    public LocalDateTime getDataAlteracao() {
         return dataAlteracao;
     }
 
-    public void setDataAlteracao(String dataAlteracao) {
+    public void setDataAlteracao(LocalDateTime dataAlteracao) {
         this.dataAlteracao = dataAlteracao;
     }
 }

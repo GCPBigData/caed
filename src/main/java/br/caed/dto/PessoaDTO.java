@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,8 +17,8 @@ public class PessoaDTO {
      String sexo;
      String email;
      String maiorIdade;
-     String dataCriacao;
-     String dataAlteracao;
+     LocalDateTime dataCriacao;
+     LocalDateTime dataAlteracao;
 
     public PessoaDTO(Pessoa objPessoa) {
         id = objPessoa.getId();
