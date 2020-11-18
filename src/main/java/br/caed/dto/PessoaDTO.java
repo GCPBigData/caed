@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -15,6 +16,7 @@ public class PessoaDTO {
      String nome;
      String cpf;
      String sexo;
+    LocalDate dataNascimento;
      String email;
      String maiorIdade;
      LocalDateTime dataCriacao;
@@ -24,7 +26,8 @@ public class PessoaDTO {
         id = objPessoa.getId();
         nome = objPessoa.getNome();
         cpf = objPessoa.getCpf();
-        sexo = objPessoa.getEmail();
+        sexo = objPessoa.getSexo();
+        dataNascimento = objPessoa.getDataNascimento();
         email = objPessoa.getEmail();
         maiorIdade = objPessoa.getMaiorIdade();
         dataCriacao = objPessoa.getDataCriacao();

@@ -5,6 +5,11 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -16,18 +21,29 @@ import java.time.LocalDateTime;
 public class Pessoa {
     @Id
     @Column("ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column("NOME")
+    @NonNull
+    @Size(max = 100, message = "CPF tamanho naximo 100 digitos")
     private String nome;
 
     @Column("CPF")
+    @NonNull
+    @Size(max = 5, message = "CPF tamanho naximo 11 digitos")
     private String cpf;
 
     @Column("SEXO")
+    @NonNull
     private String sexo;
 
+    @Column("DATA_NASCIMENTO")
+    @NonNull
+    private LocalDate dataNascimento;
+
     @Column("EMAIL")
+    @Email
     private String email;
 
     @Column("MAIOR_IDADE")
@@ -39,67 +55,5 @@ public class Pessoa {
     @Column("DATA_ALTERACAO")
     private LocalDateTime dataAlteracao;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getMaiorIdade() {
-        return maiorIdade;
-    }
-
-    public void setMaiorIdade(String maiorIdade) {
-        this.maiorIdade = maiorIdade;
-    }
-
-    public LocalDateTime getDataCriacao() {
-        return dataCriacao;
-    }
-
-    public void setDataCriacao(LocalDateTime dataCriacao) {
-        this.dataCriacao = dataCriacao;
-    }
-
-    public LocalDateTime getDataAlteracao() {
-        return dataAlteracao;
-    }
-
-    public void setDataAlteracao(LocalDateTime dataAlteracao) {
-        this.dataAlteracao = dataAlteracao;
-    }
 }
