@@ -20,10 +20,10 @@ public class SecurityConfig {
         return http
             .csrf().disable()
             .authorizeExchange()
-            /*    .pathMatchers(HttpMethod.POST, "/animes/**").hasRole("ADMIN")
-                .pathMatchers(HttpMethod.PUT, "/animes/**").hasRole("ADMIN")
-                .pathMatchers(HttpMethod.DELETE, "/animes/**").hasRole("ADMIN")*/
-                .pathMatchers(HttpMethod.GET, "/animes/**").hasRole("USER")
+                .pathMatchers(HttpMethod.POST, "/pessoas/**").hasRole("ADMIN")
+                .pathMatchers(HttpMethod.PUT, "/pessoas/**").hasRole("ADMIN")
+                .pathMatchers(HttpMethod.DELETE, "/pessoas/**").hasRole("ADMIN")
+                .pathMatchers(HttpMethod.GET, "/pessoas/**").hasRole("USER")
                 .pathMatchers(HttpMethod.GET, "/tecnicos/**").hasRole("USER")
                 .pathMatchers("/swagger-ui.html",
                     "/swagger-ui/**",

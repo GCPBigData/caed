@@ -14,7 +14,7 @@ import org.springframework.data.relational.core.mapping.Table;
 public class Pessoa {
     @Id
     @Column("ID")
-    private Long id;
+    private Integer id;
     @Column("NOME")
     private String nome;
     @Column("CPF")
@@ -29,4 +29,68 @@ public class Pessoa {
     private String dataCriacao;
     @Column("DATA_ALTERACAO")
     private String dataAlteracao;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMaiorIdade() {
+        return maiorIdade;
+    }
+
+    public void setMaiorIdade(String maiorIdade) {
+        this.maiorIdade = maiorIdade;
+    }
+
+    public String getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(String dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public String getDataAlteracao() {
+        return dataAlteracao;
+    }
+
+    public void setDataAlteracao(String dataAlteracao) {
+        this.dataAlteracao = dataAlteracao;
+    }
 }
